@@ -85,6 +85,7 @@ def buscar_producto_por_nombre(productos: list, ventas: list, producto: str) -> 
     Dada la lista de productos y ventas, encuentra el producto dado por el usuario
     y devuelve una lista de información sobre el producto
     """
+    ventas_trimestrales = listar_ventas_trimestrales(ventas)
     info_producto = []
     info_producto.append(producto)
 
@@ -92,16 +93,17 @@ def buscar_producto_por_nombre(productos: list, ventas: list, producto: str) -> 
             if productos[i] == producto:
                 for j in range(len(ventas)):
                     info_producto.append(ventas[i][j])
+                info_producto.append(ventas_trimestrales[i][1])
     return info_producto
 
 def mostrar_producto_por_nombre(info_producto: list):
     """
     Dada la información del producto, imprime sus ventas en un formato formateado
     """
-    print("-" * 40)
-    print(f"{'Producto':<15} {'T1':>7} {'T2':>7} {'T3':>7}")
-    print("-" * 40)
-    print(f"{info_producto[0]:<15} {info_producto[1]:>7} {info_producto[2]:>7} {info_producto[3]:>7}")
+    print("-" * 50)
+    print(f"{'Producto':<15} {'T1':>7} {'T2':>7} {'T3':>7} {'Total':>9}")
+    print("-" * 50)
+    print(f"{info_producto[0]:<15} {info_producto[1]:>7} {info_producto[2]:>7} {info_producto[3]:>7} {info_producto[4]:>8}")
 
 
 def comprobar_existencia_de_venta(ventas, venta) -> bool:

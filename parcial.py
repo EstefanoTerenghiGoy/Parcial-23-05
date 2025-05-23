@@ -17,7 +17,7 @@ def calcular_promedio(lista: list, valor:int) -> bool: #Parametros formales
     
 
 lista = [10, 20, 30, 40] #Parametro actual
-valor = 28               #Parametro actual
+valor = 24               #Parametro actual
 
 calcular_mayor = calcular_promedio(lista, valor) #Invocación de la función
 
