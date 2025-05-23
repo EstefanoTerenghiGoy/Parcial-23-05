@@ -1,6 +1,6 @@
 
 
-def calcular_promedio(lista, valor): #Parametros formales
+def calcular_promedio(lista: list, valor:int) -> bool: #Parametros formales
     """
     Dada una lista de numeros y un valor, calcula el promedio de la lista.
     Devuelve True en caso de que el promedio sea mayor que el valor,
